@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --radius: 0.75rem;
+    
+    /* APEX AGENT v3 Professional Colors */
+    --agent-primary: 220 26% 14%;
+    --agent-secondary: 215 25% 22%;
+    --agent-accent: 210 79% 58%;
+    --agent-highlight: 174 100% 42%;
+    --agent-warning: 35 91% 65%;
+    --agent-danger: 0 84% 60%;
+    --agent-surface: 220 26% 14%;
+    --agent-elevated: 215 25% 22%;
+    --agent-border: 215 16% 34%;
+    --agent-muted: 215 14% 52%;
+    --agent-subtle: 210 20% 89%;
+  }
+
+  .dark {
+    --background: 220 26% 14%;
+    --foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-agent-border/30;
+  }
+  body {
+    @apply bg-agent-primary text-white antialiased font-medium;
+  }
+}
+
+/* APEX AGENT v3 Professional Styles */
+.agent-text-primary {
+  color: hsl(var(--agent-accent));
+  text-shadow: 0 0 8px rgba(74, 144, 226, 0.2);
+}
+
+.agent-text-highlight {
+  color: hsl(var(--agent-highlight));
+  text-shadow: 0 0 8px rgba(0, 212, 170, 0.2);
+}
+
+.agent-border-glow {
+  border: 1px solid rgba(74, 144, 226, 0.3);
+  box-shadow: 0 0 12px rgba(74, 144, 226, 0.15);
+}
+
+.agent-glass {
+  background: rgba(45, 55, 72, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.agent-glass-elevated {
+  background: rgba(74, 85, 104, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.agent-card {
+  background: linear-gradient(135deg, rgba(45, 55, 72, 0.8) 0%, rgba(74, 85, 104, 0.6) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(74, 144, 226, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.agent-card:hover {
+  border-color: rgba(74, 144, 226, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25), 0 0 20px rgba(74, 144, 226, 0.1);
+}
+
+.agent-button-primary {
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.agent-button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
+}
+
+.agent-button-secondary {
+  background: linear-gradient(135deg, #00d4aa 0%, #00b894 100%);
+  box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
+}
+
+.agent-button-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 212, 170, 0.4);
+}
+
+.agent-input {
+  background: rgba(45, 55, 72, 0.8);
+  border: 1px solid rgba(74, 85, 104, 0.5);
+  transition: all 0.3s ease;
+}
+
+.agent-input:focus {
+  outline: none;
+  border-color: rgba(74, 144, 226, 0.6);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+  background: rgba(45, 55, 72, 0.9);
+}
+
+/* Status indicators with agent theme */
+.status-online-agent {
+  background: linear-gradient(45deg, #00d4aa, #00b894);
+  box-shadow: 0 0 12px rgba(0, 212, 170, 0.4);
+}
+
+.status-processing-agent {
+  background: linear-gradient(45deg, #4a90e2, #357abd);
+  box-shadow: 0 0 12px rgba(74, 144, 226, 0.4);
+}
+
+.status-warning-agent {
+  background: linear-gradient(45deg, #f6ad55, #e69500);
+  box-shadow: 0 0 12px rgba(246, 173, 85, 0.4);
+}
+
+/* Professional animations for agent theme */
+@keyframes pulse-agent {
+  0%, 100% { box-shadow: 0 0 15px rgba(74, 144, 226, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(74, 144, 226, 0.4); }
+}
+
+@keyframes glow-agent {
+  0% { text-shadow: 0 0 8px rgba(74, 144, 226, 0.3); }
+  100% { text-shadow: 0 0 12px rgba(74, 144, 226, 0.5); }
+}
+
+@keyframes slide-up-gentle {
+  0% { 
+    transform: translateY(30px); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes scale-in {
+  0% { 
+    transform: scale(0.95); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+.animate-pulse-agent {
+  animation: pulse-agent 4s ease-in-out infinite;
+}
+
+.animate-glow-agent {
+  animation: glow-agent 3s ease-in-out infinite alternate;
+}
+
+.animate-slide-up-gentle {
+  animation: slide-up-gentle 0.8s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s ease-out;
+}
+
+/* Custom scrollbar with agent theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(45, 55, 72, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(74, 144, 226, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(74, 144, 226, 0.8);
+}
+
+/* Professional hover effects */
+.agent-hover-lift:hover {
+  transform: translateY(-4px);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Typography enhancements */
+.agent-heading {
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.agent-subheading {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Logo glow effect */
+.agent-logo-glow {
+  filter: drop-shadow(0 0 10px rgba(74, 144, 226, 0.3));
+}
+
+.agent-logo-glow:hover {
+  filter: drop-shadow(0 0 15px rgba(74, 144, 226, 0.5));
+}
